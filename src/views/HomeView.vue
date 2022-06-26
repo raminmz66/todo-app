@@ -1,9 +1,17 @@
-<script setup>
-import TheWelcome from '@/components/TheWelcome.vue'
+<script>
+export default {
+    name: 'HomeView'
+}
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="container">
+        <h1>Let's start buidling a great app! :)</h1>
+    </div>
 </template>
+
+<style>
+.container {
+    text-align: center;
+}
+</style>
