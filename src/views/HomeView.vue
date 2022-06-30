@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div class="container">
-        <h1>Let's start buidling a great app! :)</h1>
+        <h1>Let's start buidling a great app! :D</h1>
     </div>
 </template>
 
