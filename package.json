@@ -9,6 +9,7 @@
     "deploy": "node scripts/github-pages-deploy.js"
   },
   "dependencies": {
+    "dexie": "^3.2.2",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
   },
