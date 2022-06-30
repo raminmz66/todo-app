@@ -13,7 +13,8 @@
     "dexie": "^3.2.2",
     "rxjs": "^7.5.5",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16"
+    "vue-router": "^4.0.16",
+    "workbox-build": "^6.5.3"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
