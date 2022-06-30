@@ -1,17 +1,26 @@
 <script>
 import AddTodo from '../components/AddTodo.vue';
 import TodoList from '../components/TodoList.vue';
+import { db } from '../database/db';
+import { liveQuery } from "dexie";
+import { useObservable } from "@vueuse/rxjs";
 export default {
     name: "HomeView",
     components: { AddTodo, TodoList },
-    data() {
-        return {
-            items: []
-        }
+    setup() {
+      return {
+        db,
+        items: useObservable(
+          liveQuery(() => db.todos.toArray())
+        ),
+      };
     },
     methods: {
-        addNote(data) {
-            this.items = [{ text: data.text }, ...this.items];
+        async addNote(data) {
+            const id = await db.todos.add({
+                text: data.text,
+                done: false
+            });
         }
     }
 }
