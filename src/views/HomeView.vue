@@ -6,7 +6,10 @@ import { liveQuery } from "dexie";
 import { useObservable } from "@vueuse/rxjs";
 export default {
     name: "HomeView",
-    components: { AddTodo, TodoList },
+    components: {
+        AddTodo,
+        TodoList
+    },
     setup() {
       return {
         db,
@@ -27,11 +30,25 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <h1>Let's start buidling a great app! :D</h1>
-        <AddTodo @add="addNote"></AddTodo>
-        <TodoList :todos="items"></TodoList>
-    </div>
+  <!-- Main Framework7 App component where we pass Framework7 params -->
+  <f7-app v-bind="{ theme: 'auto', name: 'My App', id: 'com.demoapp.test' }">
+    <!-- Your main view, should have "main" prop -->
+    <f7-view main>
+      <!-- Initial Page -->
+      <f7-page>
+        <!-- Top Navbar-->
+        <f7-navbar title="Awesome App"></f7-navbar>
+        <!-- Toolbar-->
+        <f7-toolbar bottom>
+          <f7-link>Link 1</f7-link>
+          <f7-link>Link 2</f7-link>
+        </f7-toolbar>
+        <!-- Page Content -->
+        <p>Page content goes here</p>
+        <f7-link href="/about/">About App</f7-link>
+      </f7-page>
+    </f7-view>
+  </f7-app>
 </template>
 
 <style>
