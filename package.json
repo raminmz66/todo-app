@@ -12,6 +12,7 @@
     "@vueuse/rxjs": "^8.7.5",
     "dexie": "^3.2.2",
     "framework7": "^7.0.5",
+    "framework7-icons": "^5.0.5",
     "framework7-vue": "^7.0.5",
     "rxjs": "^7.5.5",
     "vue": "^3.2.37",
