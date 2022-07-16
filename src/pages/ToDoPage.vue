@@ -33,14 +33,10 @@ export default {
 
 <template>
   <PageDefault navbar-title="TO DO" navbar-key="todo">
-    <f7-block>
-      <p>
-        TO DO
-      </p>
-    </f7-block>
+    <AddTodo></AddTodo>
   </PageDefault>
 </template>
 
-<style>
-
+<style scoped>
+  
 </style>
