@@ -34,7 +34,9 @@ export default {
 <template>
   <PageDefault navbar-title="TO DO" navbar-key="todo">
     <f7-block>
-      TO DO
+      <p>
+        TO DO
+      </p>
     </f7-block>
   </PageDefault>
 </template>

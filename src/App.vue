@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       f7params: {
-        theme: 'auto',
+        theme: 'ios',
         name: 'Todo',
         id: 'com.demoapp.test',
         disableContextMenu: true,
@@ -37,6 +37,5 @@ export default {
 </template>
 
 <style>
-@import '@/assets/base.css';
 
 </style>
