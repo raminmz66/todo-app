@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       f7params: {
-        theme: 'ios',
+        theme: 'auto',
         name: 'Todo',
         id: 'com.demoapp.test',
         disableContextMenu: true,
