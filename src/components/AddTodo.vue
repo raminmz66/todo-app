@@ -6,7 +6,7 @@
                 placeholder="Remember to ..."
                 clear-button
                 resizable
-                :value="text"
+                v-model:value="text"
                 autofocus
             >
             </f7-list-input>
@@ -39,6 +39,10 @@ export default {
  .block {
     display: flex;
     align-items: baseline;
+    --f7-block-margin-vertical: 20px;
+  }
+  .block.inset {
+    --f7-block-inset-side-margin: 5px;
   }
   .list {
     flex-grow: 1;

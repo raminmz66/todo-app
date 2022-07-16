@@ -5,12 +5,14 @@ import { db } from '../database/db';
 import { liveQuery } from "dexie";
 import { useObservable } from "@vueuse/rxjs";
 import PageDefault from '../Layout/PageDefault.vue';
+import TodoListOld from '../components/TodoListOld.vue';
 
 export default {
   components: {
     AddTodo,
     TodoList,
-    PageDefault
+    PageDefault,
+    TodoListOld
 },
   setup() {
     return {
@@ -26,14 +28,18 @@ export default {
               text: data.text,
               done: false
           });
+      },
+      onTodoUpdate(e) {
+        console.log(e);
       }
-  }
+  },
 }
 </script>
 
 <template>
   <PageDefault navbar-title="TO DO" navbar-key="todo">
-    <AddTodo></AddTodo>
+    <AddTodo @add="addNote"></AddTodo>
+    <TodoList :todos="items" @todoUpdate="onTodoUpdate"></TodoList>
   </PageDefault>
 </template>
 
