@@ -57,5 +57,6 @@ export default {
   .button {
     position: relative;
     bottom: 10px;
+    padding-right: 0;
   }
 </style>

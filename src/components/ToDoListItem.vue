@@ -1,9 +1,18 @@
 <template>
     <f7-list-item :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" header="3 days a go" :title="todo.text" checkbox>
         <template #after>
-            <f7-link icon-color="gray" icon-ios="f7:ellipsis_vertical" icon-aurora="f7:ellipsis_vertical" icon-md="f7:ellipsis_vertical"></f7-link>
+            <f7-link actions-open="#todo-actions" icon-color="gray" icon-ios="f7:ellipsis_vertical" icon-aurora="f7:ellipsis_vertical" icon-md="f7:ellipsis_vertical"></f7-link>
         </template>
     </f7-list-item>
+    <f7-actions id="todo-actions">
+        <f7-actions-group>
+            <f7-actions-button>Edit</f7-actions-button>
+            <f7-actions-button color="red">Remove</f7-actions-button>
+        </f7-actions-group>
+        <f7-actions-group>
+            <f7-actions-button close color="gray">Cancel</f7-actions-button>
+        </f7-actions-group>
+    </f7-actions>
 </template>
 
 <script>
