@@ -1,6 +1,6 @@
 <template>
   <f7-list>
-    <ToDoListItem v-for="todo in todos" :todo="todo" @update="onTodoUpdate"></ToDoListItem>
+    <ToDoListItem v-for="todo in todos" :todo="todo" @update="onTodoUpdate" @remove="onTodoRemove"></ToDoListItem>
   </f7-list>
 </template>
 
@@ -14,6 +14,9 @@ export default {
     methods: {
       onTodoUpdate(e) {
         this.$emit("todoUpdate", e);
+      },
+      onTodoRemove(e) {
+        this.$emit("todoRemove", e);
       }
     }
 }

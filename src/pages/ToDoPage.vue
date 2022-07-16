@@ -31,6 +31,9 @@ export default {
       },
       onTodoUpdate(e) {
         console.log(e);
+      },
+      async onTodoRemove(e) {
+        await db.todos.delete(e.id);
       }
   },
 }
@@ -39,7 +42,7 @@ export default {
 <template>
   <PageDefault navbar-title="TO DO" navbar-key="todo">
     <AddTodo @add="addNote"></AddTodo>
-    <TodoList :todos="items" @todoUpdate="onTodoUpdate"></TodoList>
+    <TodoList :todos="items" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove"></TodoList>
   </PageDefault>
 </template>
 
