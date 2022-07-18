@@ -23,7 +23,7 @@ export default {
     methods: {
         onChange(e) {
             this.todo.done = e.target.checked;
-            this.$emit("update", { id: this.todo.id, done: this.todo.done });
+            this.$emit("update", { id: this.todo.id, done: this.todo.done ? 1 : 0 });
         },
         onRemove(id) {
             this.$emit("remove", { id });

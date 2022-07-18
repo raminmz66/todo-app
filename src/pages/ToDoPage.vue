@@ -18,7 +18,14 @@ export default {
     return {
       db,
       items: useObservable(
-        liveQuery(() => db.todos.toArray())
+        liveQuery(() => {
+          let todos = db.todos
+            .where('done')
+            .equals(0)
+            .or('updatedTime')
+            .equals(new Date().toDateString())
+          return todos.reverse().sortBy('id');
+        })
       ),
     };
   },
@@ -26,11 +33,13 @@ export default {
       async addNote(data) {
           const id = await db.todos.add({
               text: data.text,
-              done: false
+              done: 0,
+              createdTime: new Date().toDateString(),
+              updatedTime: new Date().toDateString(),
           });
       },
       async onTodoUpdate(data) {
-        await db.todos.update(data.id, data);
+        await db.todos.update(data.id, {...data, updatedTime: new Date().toDateString()});
       },
       async onTodoRemove(e) {
         await db.todos.delete(e.id);
