@@ -29,8 +29,8 @@ export default {
               done: false
           });
       },
-      onTodoUpdate(e) {
-        console.log(e);
+      async onTodoUpdate(data) {
+        await db.todos.update(data.id, data);
       },
       async onTodoRemove(e) {
         await db.todos.delete(e.id);
