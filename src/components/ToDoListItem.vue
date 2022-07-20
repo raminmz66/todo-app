@@ -1,13 +1,20 @@
 <template>
-    <f7-list-item :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" header="3 days a go" :title="todo.text" checkbox>
+    <f7-list-item v-if="editMode" :checked="todo.done" :key="`${todo.id}`">
+        <f7-input type="text" v-model:value="todo.text"></f7-input>
+        <f7-segmented>
+            <f7-button active @click="onUpdate()">Save</f7-button>
+            <f7-button outline @click="onEditCancel">Cancel</f7-button>
+        </f7-segmented>
+    </f7-list-item>
+    <f7-list-item v-else :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" header="3 days a go" :title="todo.text" checkbox>
         <template #after>
             <f7-link :actions-open="`#todo-actions-${todo.id}`" icon-color="gray" icon-ios="f7:ellipsis_vertical" icon-aurora="f7:ellipsis_vertical" icon-md="f7:ellipsis_vertical"></f7-link>
         </template>
     </f7-list-item>
     <f7-actions :id="`todo-actions-${todo.id}`">
         <f7-actions-group>
-            <f7-actions-button>Edit</f7-actions-button>
-            <f7-actions-button color="red" @click="onRemove(todo.id)">Remove</f7-actions-button>
+            <f7-actions-button @click="onEdit">Edit</f7-actions-button>
+            <f7-actions-button color="red" @click="onRemove()">Remove</f7-actions-button>
         </f7-actions-group>
         <f7-actions-group>
             <f7-actions-button close color="gray">Cancel</f7-actions-button>
@@ -20,13 +27,31 @@ export default {
     props: {
         todo: Object
     },
+    data() {
+        return {
+            editMode: false,
+            oldText: this.todo.text
+        }
+    },
     methods: {
         onChange(e) {
             this.todo.done = e.target.checked;
             this.$emit("update", { id: this.todo.id, done: this.todo.done ? 1 : 0 });
         },
-        onRemove(id) {
-            this.$emit("remove", { id });
+        onRemove() {
+            this.$emit("remove", { id: this.todo.id });
+        },
+        onEditCancel() {
+            this.todo.text = this.oldText;
+            this.editMode = false;
+        },
+        onEdit() {
+            this.editMode = true;
+        },
+        onUpdate() {
+            this.editMode = false;
+            this.$emit("update", { id: this.todo.id, text: this.todo.text });
+            this.oldText = this.todo.text;
         }
     },
 }
@@ -40,5 +65,12 @@ export default {
     }
     .done ::v-deep(.item-content) {
         background: #efefef;
+    }
+    li ::v-deep(.item-inner .input) {
+        flex-grow: 1;
+        padding: 0 10px;
+        margin-right: 10px;
+        border: 1px solid lightgray;
+        border-radius: 8px;
     }
 </style>
