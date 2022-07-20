@@ -73,4 +73,7 @@ export default {
         border: 1px solid lightgray;
         border-radius: 8px;
     }
+    li ::v-deep(.item-title) {
+        white-space: pre-line;
+    }
 </style>
