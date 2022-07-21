@@ -12,7 +12,7 @@
       <f7-searchbar
         :class="`searchbar-${searchKey}`"
         expandable
-        search-container=".search-list"
+        :search-container="`.search-list-${searchKey}`"
         search-in=".item-title"
         :disable-button="!theme.aurora"
       ></f7-searchbar>

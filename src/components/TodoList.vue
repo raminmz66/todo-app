@@ -1,5 +1,5 @@
 <template>
-  <f7-list>
+  <f7-list class="search-list-todo">
     <ToDoListItem v-for="todo in todos" :todo="todo" @update="onTodoUpdate" @remove="onTodoRemove"></ToDoListItem>
   </f7-list>
 </template>
