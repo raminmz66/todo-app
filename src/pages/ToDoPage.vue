@@ -13,7 +13,7 @@ export default {
     TodoList,
     PageDefault,
     TodoListOld
-},
+  },
   setup() {
     return {
       db,
