@@ -18,7 +18,7 @@ export default {
           let todos = db.todos
             .where('done')
             .equals(1)
-            .and(todo => todo.updatedTime !== new Date().toDateString());
+            .and(todo => todo.updatedTime.getDate() !== new Date().getDate());
           return todos.reverse().sortBy('id');
         })
       ),

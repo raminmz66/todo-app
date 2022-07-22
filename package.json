@@ -17,6 +17,7 @@
     "rxjs": "^7.5.5",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16",
+    "vue2-timeago": "^3.0.2",
     "workbox-build": "^6.5.3"
   },
   "devDependencies": {

@@ -6,7 +6,14 @@
             <f7-button outline @click="onEditCancel">Cancel</f7-button>
         </f7-segmented>
     </f7-list-item>
-    <f7-list-item v-else :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" header="3 days a go" :title="todo.text" checkbox>
+    <f7-list-item v-else :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" :title="todo.text" checkbox>
+        <template #header>
+            <Timeago :datetime="timeAgoDateTime">
+                <template #default="{ timeago }">
+                    {{ (this.todo.done ? 'Updated ' : 'Created ') + timeago }}
+                </template>
+            </Timeago>
+        </template>
         <template #after>
             <f7-link :actions-open="`#todo-actions-${todo.id}`" icon-color="gray" icon-ios="f7:ellipsis_vertical" icon-aurora="f7:ellipsis_vertical" icon-md="f7:ellipsis_vertical"></f7-link>
         </template>
@@ -23,15 +30,25 @@
 </template>
 
 <script>
-export default {
+import { Timeago } from 'vue2-timeago'
+
+export default {   
     props: {
         todo: Object
+    },
+    components: {
+        Timeago
     },
     data() {
         return {
             editMode: false,
             oldText: this.todo.text
         }
+    },
+    computed: {
+        timeAgoDateTime() {
+            return this.todo.done ? this.todo.updatedTime : this.todo.createdTime;
+        },
     },
     methods: {
         onChange(e) {
@@ -52,7 +69,7 @@ export default {
             this.editMode = false;
             this.$emit("update", { id: this.todo.id, text: this.todo.text });
             this.oldText = this.todo.text;
-        }
+        },
     },
 }
 </script>

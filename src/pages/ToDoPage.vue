@@ -19,11 +19,15 @@ export default {
       db,
       items: useObservable(
         liveQuery(() => {
+          const todayStart = new Date();
+          const todayEnd = new Date();
+          todayStart.setHours(0,0,0,0);
+          todayEnd.setHours(23,59,59,999);
           let todos = db.todos
             .where('done')
             .equals(0)
             .or('updatedTime')
-            .equals(new Date().toDateString())
+            .between(todayStart,todayEnd,true,true);
           return todos.reverse().sortBy('id');
         })
       ),
@@ -34,12 +38,12 @@ export default {
           const id = await db.todos.add({
               text: data.text,
               done: 0,
-              createdTime: new Date().toDateString(),
-              updatedTime: new Date().toDateString(),
+              createdTime: new Date(),
+              updatedTime: new Date(),
           });
       },
       async onTodoUpdate(data) {
-        await db.todos.update(data.id, {...data, updatedTime: new Date().toDateString()});
+        await db.todos.update(data.id, {...data, updatedTime: new Date()});
       },
       async onTodoRemove(e) {
         await db.todos.delete(e.id);
