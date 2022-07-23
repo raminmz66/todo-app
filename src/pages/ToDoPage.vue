@@ -35,12 +35,12 @@ export default {
   },
   methods: {
       async addNote(data) {
-          const id = await db.todos.add({
-              text: data.text,
-              done: 0,
-              createdTime: new Date(),
-              updatedTime: new Date(),
-          });
+        await db.todos.add({
+            text: data.text,
+            done: 0,
+            createdTime: new Date(),
+            updatedTime: new Date(),
+        });
       },
       async onTodoUpdate(data) {
         await db.todos.update(data.id, {...data, updatedTime: new Date()});

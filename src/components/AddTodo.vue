@@ -26,10 +26,13 @@ export default {
   },
   methods: {
       onAdd() {
+        this.text = this.text.trim();
+        if (this.text) {
           this.$emit("add", { text: this.text });
           this.text = "";
           document.querySelector(".block textarea").style.height="var(--f7-input-height)";
-          document.querySelector(".block textarea").focus();
+        }
+        document.querySelector(".block textarea").focus();
       },
   }    
 }

@@ -66,9 +66,11 @@ export default {
             this.editMode = true;
         },
         onUpdate() {
-            this.editMode = false;
-            this.$emit("update", { id: this.todo.id, text: this.todo.text });
-            this.oldText = this.todo.text;
+            if (this.todo.text.trim()) {
+                this.editMode = false;
+                this.$emit("update", { id: this.todo.id, text: this.todo.text.trim() });
+                this.oldText = this.todo.text.trim();
+            }
         },
     },
 }
