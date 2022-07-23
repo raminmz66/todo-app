@@ -24,6 +24,9 @@ export default {
       ),
    };
   },
+  provide: {
+    selectableItems: false
+  },
   methods: {
     async onTodoUpdate(data) {
       await db.todos.update(data.id, {...data, updatedTime: new Date().toDateString()});

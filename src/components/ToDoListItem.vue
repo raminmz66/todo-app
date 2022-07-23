@@ -6,7 +6,7 @@
             <f7-button outline @click="onEditCancel">Cancel</f7-button>
         </f7-segmented>
     </f7-list-item>
-    <f7-list-item v-else :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" :title="todo.text" checkbox>
+    <f7-list-item v-else :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" :title="todo.text" :checkbox="selectableItems">
         <template #header>
             <Timeago :datetime="timeAgoDateTime">
                 <template #default="{ timeago }">
@@ -33,6 +33,12 @@
 import { Timeago } from 'vue2-timeago'
 
 export default {   
+    inject: {
+        selectableItems: {
+            from: 'selectableItems',
+            default: true
+        }
+    },
     props: {
         todo: Object
     },
@@ -42,7 +48,7 @@ export default {
     data() {
         return {
             editMode: false,
-            oldText: this.todo.text
+            oldText: this.todo.text,
         }
     },
     computed: {
