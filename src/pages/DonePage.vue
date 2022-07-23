@@ -25,7 +25,9 @@ export default {
    };
   },
   provide: {
-    selectableItems: false
+    selectableItems: false,
+    editableItems: false,
+    undonableItems: true
   },
   methods: {
     async onTodoUpdate(data) {

@@ -20,7 +20,8 @@
     </f7-list-item>
     <f7-actions :id="`todo-actions-${todo.id}`">
         <f7-actions-group>
-            <f7-actions-button @click="onEdit">Edit</f7-actions-button>
+            <f7-actions-button v-if="todo.done && undonableItems" @click="onUndone">Undone</f7-actions-button>
+            <f7-actions-button v-if="editableItems" @click="onEdit">Edit</f7-actions-button>
             <f7-actions-button color="red" @click="onRemove()">Remove</f7-actions-button>
         </f7-actions-group>
         <f7-actions-group>
@@ -37,6 +38,14 @@ export default {
         selectableItems: {
             from: 'selectableItems',
             default: true
+        },
+        editableItems: {
+            from: 'editableItems',
+            default: true
+        },
+        undonableItems: {
+            from: 'undonableItems',
+            default: false
         }
     },
     props: {
@@ -78,6 +87,11 @@ export default {
                 this.oldText = this.todo.text.trim();
             }
         },
+        onUndone() {
+            if (this.todo.done) {
+                this.$emit("update", { id: this.todo.id, done: 0 });
+            }
+        }
     },
 }
 </script>
