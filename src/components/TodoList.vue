@@ -1,5 +1,5 @@
 <template>
-  <f7-list class="search-list-todo">
+  <f7-list :class="`search-list-${pageKey}`">
     <ToDoListItem v-for="todo in todos" :todo="todo" @update="onTodoUpdate" @remove="onTodoRemove"></ToDoListItem>
   </f7-list>
 </template>
@@ -7,18 +7,19 @@
 <script>
 import ToDoListItem from './ToDoListItem.vue';
 export default {
-    props: {
-        todos: Array
+  inject: ['pageKey'],
+  props: {
+      todos: Array
+  },
+  components: { ToDoListItem },
+  methods: {
+    onTodoUpdate(e) {
+      this.$emit("todoUpdate", e);
     },
-    components: { ToDoListItem },
-    methods: {
-      onTodoUpdate(e) {
-        this.$emit("todoUpdate", e);
-      },
-      onTodoRemove(e) {
-        this.$emit("todoRemove", e);
-      }
+    onTodoRemove(e) {
+      this.$emit("todoRemove", e);
     }
+  }
 }
 </script>
 

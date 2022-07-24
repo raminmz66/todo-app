@@ -1,7 +1,7 @@
 <template>
     <f7-page>
         <template #fixed>
-            <TheNavbar :title="navbarTitle" :searchKey="navbarKey"></TheNavbar>
+            <TheNavbar :title="navbarTitle"></TheNavbar>
             <TheLeftPanel></TheLeftPanel>
             <f7-toolbar bottom tabbar labels>
                 <f7-link tab-link :animate="false" href="/" :tab-link-active="navbarKey == 'todo'" text="TO DO" icon-ios="f7:square_pencil" icon-aurora="f7:square_pencil" icon-md="material:edit"></f7-link>
@@ -22,8 +22,7 @@ export default {
         TheLeftPanel
     },
     props: {
-        navbarTitle: "",
-        navbarKey: ""
+        navbarTitle: ""
     }    
 }
 </script>

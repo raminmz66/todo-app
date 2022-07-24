@@ -27,7 +27,8 @@ export default {
   provide: {
     selectableItems: false,
     editableItems: false,
-    undonableItems: true
+    undonableItems: true,
+    pageKey: 'done'
   },
   methods: {
     async onTodoUpdate(data) {
@@ -41,7 +42,7 @@ export default {
 </script>
 
 <template>
-  <PageDefault navbar-title="DONE" navbar-key="done">
+  <PageDefault navbar-title="DONE">
     <TodoList :todos="items" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove"></TodoList>
   </PageDefault>
 </template>

@@ -7,12 +7,12 @@
         {{ title }}
       </f7-nav-title>
       <f7-nav-right>
-        <f7-link class="searchbar-enable" :data-searchbar="`.searchbar-${searchKey}`" icon-ios="f7:search" icon-aurora="f7:search" icon-md="material:search"></f7-link>
+        <f7-link class="searchbar-enable" :data-searchbar="`.searchbar-${pageKey}`" icon-ios="f7:search" icon-aurora="f7:search" icon-md="material:search"></f7-link>
       </f7-nav-right>
       <f7-searchbar
-        :class="`searchbar-${searchKey}`"
+        :class="`searchbar-${pageKey}`"
         expandable
-        :search-container="`.search-list-${searchKey}`"
+        :search-container="`.search-list-${pageKey}`"
         search-in=".item-title"
         :disable-button="!theme.aurora"
       ></f7-searchbar>
@@ -23,6 +23,7 @@
 import { theme } from 'framework7-vue';
 
 export default {
+    inject: ['pageKey'],
     data() {
         return {
             theme
@@ -30,7 +31,6 @@ export default {
     },
     props: {
       title: "",
-      searchKey: ""
     }
 }
 </script>

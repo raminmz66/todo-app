@@ -33,6 +33,9 @@ export default {
       ),
     };
   },
+  provide: {
+    pageKey: 'todo'
+  },
   methods: {
       async addNote(data) {
         await db.todos.add({
@@ -53,7 +56,7 @@ export default {
 </script>
 
 <template>
-  <PageDefault navbar-title="TO DO" navbar-key="todo">
+  <PageDefault navbar-title="TO DO">
     <AddTodo @add="addNote"></AddTodo>
     <TodoList :todos="items" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove"></TodoList>
   </PageDefault>
