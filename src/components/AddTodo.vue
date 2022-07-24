@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { focus } from '../utils/utils';
+
 export default {
   data() {
       return {
@@ -32,7 +34,7 @@ export default {
           this.text = "";
           document.querySelector(".block textarea").style.height="var(--f7-input-height)";
         }
-        document.querySelector(".block textarea").focus();
+        focus(".block textarea");
       },
   }    
 }

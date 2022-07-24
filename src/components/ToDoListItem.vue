@@ -1,6 +1,6 @@
 <template>
     <f7-list-item v-if="editMode" :checked="todo.done" :key="`${todo.id}`">
-        <f7-input type="text" v-model:value="todo.text"></f7-input>
+        <f7-input :name="`textarea-${todo.id}`" type="textarea" v-model:value="todo.text" resizable></f7-input>
         <f7-segmented>
             <f7-button active @click="onUpdate()">Save</f7-button>
             <f7-button outline @click="onEditCancel">Cancel</f7-button>
@@ -31,7 +31,8 @@
 </template>
 
 <script>
-import { Timeago } from 'vue2-timeago'
+import { Timeago } from 'vue2-timeago';
+import { focus } from '../utils/utils';
 
 export default {   
     inject: {
@@ -79,6 +80,7 @@ export default {
         },
         onEdit() {
             this.editMode = true;
+            focus(`[name=textarea-${this.todo.id}]`);
         },
         onUpdate() {
             if (this.todo.text.trim()) {
