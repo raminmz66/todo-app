@@ -8,6 +8,7 @@ import '../node_modules/framework7/framework7-bundle.min.css'
 import '../node_modules/framework7-icons/css/framework7-icons.css';
 
 import '../src/assets/app.css';
+import '../src/assets/theme-default.css';
 
 // Import F7-Vue Plugin Bundle (with all F7 components registered)
 import Framework7Vue, { registerComponents } from 'framework7-vue/bundle'

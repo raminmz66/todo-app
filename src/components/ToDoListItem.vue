@@ -15,7 +15,7 @@
             </Timeago>
         </template>
         <template #after>
-            <f7-link :actions-open="`#todo-actions-${todo.id}`" icon-color="gray" icon-ios="f7:ellipsis_vertical" icon-aurora="f7:ellipsis_vertical" icon-md="f7:ellipsis_vertical"></f7-link>
+            <f7-link :actions-open="`#todo-actions-${todo.id}`" icon-ios="f7:ellipsis_vertical" icon-aurora="f7:ellipsis_vertical" icon-md="f7:ellipsis_vertical"></f7-link>
         </template>
     </f7-list-item>
     <f7-actions :id="`todo-actions-${todo.id}`">

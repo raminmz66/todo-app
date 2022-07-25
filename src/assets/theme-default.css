@@ -1,0 +1,71 @@
+:root {
+    --f7-theme-color: #f9a621;
+    --f7-navbar-bg-color-rgb: 0,123,164;
+    --f7-bars-translucent-opacity: 1;
+    --f7-navbar-text-color: white;
+    --f7-navbar-link-color: white;
+    --f7-list-item-title-font-weight: 500;
+    --f7-list-item-header-text-color: #46b5be !important;
+    --f7-list-item-header-font-weight: 200;
+    --f7-list-item-header-line-height: 1.4;
+    --f7-toolbar-bg-color-rgb: 0,123,164;
+    --f7-tabbar-label-font-weight: 700;
+    --f7-tabbar-link-inactive-color: rgba(255,255,255,0.5);
+}
+
+.page-content {
+    background: white;
+}
+
+.navbar-menu-icon i {
+    background: #015c7b;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.item-header {
+    font-style: italic;
+}
+
+.add-todo-block {
+    margin: 0 !important;
+    background: #ffc809;
+    padding: 10px;
+    border-radius: 0 !important;
+    line-height: 1;
+    --f7-list-inset-border-radius: 25px;
+}
+
+.add-todo-block .item-content {
+    background: #e6b709;
+    border-radius: var(--f7-list-inset-border-radius);
+}
+
+.add-todo-block textarea {
+    --f7-input-height: 34px;
+    color: #5a4700;
+    font-weight: 500;
+}
+
+.add-todo-block textarea::placeholder {
+    color: #5a4700 !important;
+    opacity: 0.5;
+}
+
+.add-todo-block .button i {
+    color: white;
+}
+
+.search-list-todo {
+    --f7-list-margin-vertical: 20px;
+    --f7-list-bg-color: transparent;
+    --f7-list-border-color: transparent;
+    --f7-list-item-border-color: transparent;
+}
+
+.search-list-todo li {
+    margin: 15px 20px;
+    background: #f2f2f2;
+    border-left: 6px solid #007ba4;
+    color: #2e225f;
+}

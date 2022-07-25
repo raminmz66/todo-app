@@ -1,7 +1,7 @@
 <template>
     <f7-navbar>
       <f7-nav-left>
-        <f7-link panel-open="left" icon-ios="f7:menu" icon-aurora="f7:menu" icon-md="material:menu"></f7-link>
+        <f7-link class="navbar-menu-icon" panel-open="left" icon-ios="f7:menu" icon-aurora="f7:menu" icon-md="material:menu"></f7-link>
       </f7-nav-left>
       <f7-nav-title>
         {{ title }}

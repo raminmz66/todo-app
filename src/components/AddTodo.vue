@@ -1,5 +1,5 @@
 <template>
-    <f7-block class="block" inset>
+    <f7-block class="block add-todo-block" inset>
         <f7-list class="no-margin" inset form>
             <f7-list-input
                 type="textarea"
@@ -12,7 +12,7 @@
             </f7-list-input>
         </f7-list>
         <f7-button class="button" @click="onAdd">
-            <f7-icon f7="plus_circle_fill" size="32"></f7-icon>
+            <f7-icon f7="plus_circle_outline" size="32"></f7-icon>
         </f7-button>
     </f7-block>
 </template>
@@ -60,8 +60,6 @@ export default {
     line-height: 1;
   }
   .button {
-    position: relative;
-    bottom: 10px;
     padding-right: 0;
   }
 </style>
