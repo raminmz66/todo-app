@@ -30,6 +30,19 @@
     font-weight: 500;
 }
 
+.sidebar-panel-left .page-content,
+.sidebar-panel-left .page-content .list ul {
+    background: #46b5be;
+    color: #2d2360;
+    --f7-menu-list-selected-text-color: #042688;
+    --f7-menu-list-selected-bg-color: #ffc809;
+}
+
+.sidebar-panel-left .page-content .list ul:before, 
+.sidebar-panel-left .page-content .list ul:after {
+    display: none;
+}
+
 .item-header {
     font-style: italic;
 }

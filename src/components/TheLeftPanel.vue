@@ -1,7 +1,7 @@
 <template>
     <f7-panel left push backdrop>
       <f7-view>
-        <f7-page bgColor="white">
+        <f7-page class="sidebar-panel-left">
           <f7-list menu-list>
             <f7-list-item
               link
