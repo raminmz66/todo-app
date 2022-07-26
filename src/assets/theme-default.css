@@ -1,6 +1,5 @@
 :root {
     --f7-theme-color: #f9a621;
-    --f7-navbar-bg-color-rgb: 0,123,164;
     --f7-bars-translucent-opacity: 1;
     --f7-navbar-text-color: white;
     --f7-navbar-link-color: white;
@@ -8,13 +7,17 @@
     --f7-list-item-header-text-color: #46b5be !important;
     --f7-list-item-header-font-weight: 200;
     --f7-list-item-header-line-height: 1.4;
-    --f7-toolbar-bg-color-rgb: 0,123,164;
     --f7-tabbar-label-font-weight: 700;
     --f7-tabbar-link-inactive-color: rgba(255,255,255,0.5);
 }
 
 .page-content {
     background: white;
+}
+
+.navbar-bg,
+.toolbar {
+    background: #007ba4 !important;
 }
 
 .navbar-menu-icon i {
