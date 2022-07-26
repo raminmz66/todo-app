@@ -103,6 +103,7 @@ export default {
         text-decoration: line-through;
         color: gray;
         font-style: italic;
+        font-weight: 400;
     }
     .done ::v-deep(.item-content) {
         background: #efefef;

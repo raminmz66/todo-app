@@ -17,8 +17,7 @@ export default {
         liveQuery(() => {
           let todos = db.todos
             .where('done')
-            .equals(1)
-            .and(todo => todo.updatedTime.getDate() !== new Date().getDate());
+            .equals(1);
           return todos.reverse().sortBy('id');
         })
       ),

@@ -5,7 +5,7 @@
     --f7-navbar-link-color: white;
     --f7-list-item-title-font-weight: 500;
     --f7-list-item-header-text-color: #46b5be !important;
-    --f7-list-item-header-font-weight: 200;
+    --f7-list-item-header-font-weight: 400;
     --f7-list-item-header-line-height: 1.4;
     --f7-tabbar-label-font-weight: 700;
     --f7-tabbar-link-inactive-color: rgba(255,255,255,0.5);
@@ -24,6 +24,10 @@
     background: #015c7b;
     border-radius: 50%;
     padding: 2px;
+}
+
+.searchbar-disable-button {
+    font-weight: 500;
 }
 
 .item-header {
@@ -47,7 +51,7 @@
 .add-todo-block textarea {
     --f7-input-height: 34px;
     color: #5a4700;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .add-todo-block textarea::placeholder {
@@ -59,16 +63,24 @@
     color: white;
 }
 
-.search-list-todo {
+.search-list-todo,
+.search-list-done {
     --f7-list-margin-vertical: 20px;
     --f7-list-bg-color: transparent;
     --f7-list-border-color: transparent;
     --f7-list-item-border-color: transparent;
 }
 
-.search-list-todo li {
+.search-list-todo li,
+.search-list-done li {
     margin: 15px 20px;
     background: #f2f2f2;
     border-left: 6px solid #007ba4;
     color: #2e225f;
+}
+
+.search-list-todo li.done,
+.search-list-done li.done {
+    margin-left: 26px;
+    border-left-color: transparent;
 }
