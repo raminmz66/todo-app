@@ -6,6 +6,7 @@ import Framework7 from 'framework7/lite-bundle'
 import '../node_modules/framework7/framework7-bundle.min.css'
 
 import '../node_modules/framework7-icons/css/framework7-icons.css';
+import '../node_modules/material-icons-font/material-icons-font.css';
 
 import '../src/assets/app.css';
 import '../src/assets/theme-default.css';
