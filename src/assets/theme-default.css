@@ -38,6 +38,10 @@
     --f7-menu-list-selected-bg-color: #ffc809;
 }
 
+.sidebar-panel-left .page-content .list {
+    margin: 0;
+}
+
 .sidebar-panel-left .page-content .list ul:before, 
 .sidebar-panel-left .page-content .list ul:after {
     display: none;

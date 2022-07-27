@@ -2,6 +2,9 @@
     <f7-panel left push backdrop>
       <f7-view>
         <f7-page class="sidebar-panel-left">
+          <div class="sidebar-logo">
+            <img src="../assets/logo.svg" />
+          </div>
           <f7-list menu-list>
             <f7-list-item
               link

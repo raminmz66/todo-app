@@ -1,3 +1,12 @@
 :root {
     --f7-panel-backdrop-bg-color: rgba(0,0,0,0.2);
 }
+
+.sidebar-logo {
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+.sidebar-logo img {
+    max-width: 80px;
+}
