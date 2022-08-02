@@ -1,6 +1,7 @@
 <script>
 import ToDoPage from './pages/ToDoPage.vue';
 import DonePage from './pages/DonePage.vue';
+import AboutPage from './pages/AboutPage.vue';
 
 export default {
   components: {
@@ -21,6 +22,10 @@ export default {
           {
             path: '/done',
             component: DonePage,
+          },
+          {
+            path: '/about',
+            component: AboutPage,
           },
         ]
       }

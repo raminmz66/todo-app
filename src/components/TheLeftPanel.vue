@@ -17,8 +17,10 @@
               </template>
             </f7-list-item>
             <f7-list-item
-              link
+              link="/about"
+              view=".view-main"
               title="About"
+              panel-close
             >
               <template #media>
                 <f7-icon md="material:person" aurora="f7:person_fill" ios="f7:person_fill" />
