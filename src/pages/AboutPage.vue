@@ -7,13 +7,21 @@
             <div class="logo">
                 <img src="../assets/logo.svg" />
             </div>
-            <div class="app-title">Todo app</div>
-            <div>1.0.0</div>
-            <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
-                licensed under GNU GPL v3
-            </a>
+            <div class="app-title-container">
+                <span class="app-title">
+                    Todo app
+                </span>
+                <span>
+                    1.0.0
+                </span>
+                <span>
+                    <a class="external" target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+                    licensed under GNU GPL v3
+                    </a>
+                </span>
+            </div>
             <p class="github">
-                <a href="https://github.com/raminmz66/todo-app">
+                <a class="external" target="_blank" href="https://github.com/raminmz66/todo-app">
                     Source code available at GitHub
                     <img src="../assets/github.svg" width="64" />
                 </a>
@@ -25,7 +33,7 @@
                 Ramin Maazallahi
             </div>
             <p>
-                <a href="mailto:ramin.mz66@gmail.com">
+                <a class="external" target="_blank" href="mailto:ramin.mz66@gmail.com">
                     <img src="../assets/mail.svg" width="64" />
                 </a>
             </p>
@@ -51,6 +59,12 @@ export default {
     }
     .logo {
         width: 128px;
+    }
+    .app-title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.5;
     }
     .app-title {
         font-weight: 700;
