@@ -7,16 +7,6 @@
           </div>
           <f7-list menu-list>
             <f7-list-item
-              link
-              title="Home"
-              :selected="true"
-              @click="() => (selected = 'home')"
-            >
-              <template #media>
-                <f7-icon md="material:home" aurora="f7:house_fill" ios="f7:house_fill" />
-              </template>
-            </f7-list-item>
-            <f7-list-item
               link="/about"
               view=".view-main"
               title="About"
