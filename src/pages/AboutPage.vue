@@ -12,7 +12,7 @@
                     Todo app
                 </span>
                 <span>
-                    1.0.0
+                    {{ this.appVersion }}
                 </span>
                 <span>
                     <a class="external" target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.en.html">

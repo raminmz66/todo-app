@@ -24,4 +24,8 @@ const app = createApp(App)
 // Register all Framework7 Vue components
 registerComponents(app);
 
+import packageInfo from '../package.json';
+
+app.config.globalProperties.appVersion = packageInfo.version;
+
 app.mount('#app')
