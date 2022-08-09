@@ -17,6 +17,9 @@
               </template>
             </f7-list-item>
           </f7-list>
+          <div class="version">
+            Version: 1.0.0
+          </div>
         </f7-page>
       </f7-view>
     </f7-panel>
@@ -28,6 +31,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .version {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+  }
 </style>
