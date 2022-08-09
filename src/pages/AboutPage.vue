@@ -9,12 +9,12 @@
             </div>
             <div class="app-title-container">
                 <span class="app-title">
-                    Todo app
+                    {{ this.appTitle }}
                 </span>
                 <span>
                     {{ this.appVersion }}
                 </span>
-                <span>
+                <span class="license">
                     <a class="external" target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.en.html">
                     licensed under GNU GPL v3
                     </a>
@@ -87,6 +87,10 @@ export default {
         align-items: center;
     }
     .github a img {
+        margin-top: 10px;
+    }
+
+    .license {
         margin-top: 10px;
     }
 </style>
