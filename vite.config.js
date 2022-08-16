@@ -13,8 +13,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        "name": "Todo app",
-        "short_name": "Todo app",
+        "name": "Todo",
+        "short_name": "Todo",
         "description": "A simple todo app, just for you!",
         "icons": [
             {
