@@ -12,6 +12,9 @@ export default defineConfig({
     vueJsx(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2,ttf}']
+      },
       manifest: {
         "name": "Todo",
         "short_name": "Todo",
