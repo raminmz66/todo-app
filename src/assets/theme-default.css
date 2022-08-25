@@ -9,6 +9,7 @@
     --f7-list-item-header-line-height: 1.4;
     --f7-tabbar-label-font-weight: 700;
     --f7-tabbar-link-inactive-color: rgba(255,255,255,0.5);
+    --f7-navbar-hide-show-transition-duration: 0s;
 }
 
 .page-content {
