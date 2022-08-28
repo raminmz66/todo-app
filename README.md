@@ -6,7 +6,11 @@ Todo is a simple [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_
 
 ## Screenshots
 
-To be completed...
+![todo](src/assets/screenshots/todo.jpg)
+![edit](src/assets/screenshots/edit.jpg)
+![done](src/assets/screenshots/done.jpg)
+![done-actions](src/assets/screenshots/done-actions.jpg)
+
 
 ## Frameworks and Tools
 
