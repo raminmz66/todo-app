@@ -1,7 +1,7 @@
 {
   "name": "todo-app",
-  "version": "1.0.0-beta",
-  "title": "Todo app",
+  "version": "1.0.0",
+  "title": "Todo",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
