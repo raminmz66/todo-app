@@ -2,11 +2,9 @@
 import ToDoPage from './pages/ToDoPage.vue';
 import DonePage from './pages/DonePage.vue';
 import AboutPage from './pages/AboutPage.vue';
+import SettingsPage from './pages/SettingsPage.vue';
 
 export default {
-  components: {
-    ToDoPage
-  },
   data() {
     return {
       f7params: {
@@ -27,6 +25,10 @@ export default {
             path: '/about',
             component: AboutPage,
           },
+          {
+            path: '/settings',
+            component: SettingsPage
+          }
         ]
       }
     }
