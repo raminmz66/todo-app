@@ -29,4 +29,7 @@ import packageInfo from '../package.json';
 app.config.globalProperties.appVersion = packageInfo.version;
 app.config.globalProperties.appTitle = packageInfo.title;
 
-app.mount('#app')
+import store from './store/store';
+
+app.use(store);
+app.mount('#app');

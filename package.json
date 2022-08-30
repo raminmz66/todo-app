@@ -1,6 +1,6 @@
 {
   "name": "todo-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "Todo",
   "scripts": {
     "dev": "vite",
@@ -20,6 +20,7 @@
     "vue": "^3.2.37",
     "vue-router": "^4.0.16",
     "vue2-timeago": "^3.0.2",
+    "vuex": "^4.0.2",
     "workbox-build": "^6.5.3"
   },
   "devDependencies": {
