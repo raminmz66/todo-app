@@ -1,6 +1,6 @@
 <template>
   <f7-list :class="`search-list-${pageKey}`">
-    <ToDoListItem v-for="todo in todos" :todo="todo" @update="onTodoUpdate" @remove="onTodoRemove"></ToDoListItem>
+    <ToDoListItem v-for="todo in todos" :key="todo.id" :todo="todo" @update="onTodoUpdate" @remove="onTodoRemove"></ToDoListItem>
   </f7-list>
 </template>
 
