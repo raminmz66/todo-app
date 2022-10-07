@@ -1,13 +1,12 @@
 <template>
     <f7-page>
         <template #fixed>
-            <f7-navbar title="Settings" back-link="Back"></f7-navbar>
+            <f7-navbar :title="$t('settings.PAGE_TITLE')" :back-link="$t('navbar.BACK')"></f7-navbar>
         </template>
         <f7-list>
-            <f7-list-item title="Language" smart-select :smart-select-params="{openIn: 'popup'}">
-            <select name="language">
-                <option value="en" selected>English</option>
-                <option value="fa">فارسی</option>
+            <f7-list-item :title="$t('settings.LANGUAGE')" smart-select :smart-select-params="{openIn: 'popup', popupCloseLinkText: $t('navbar.CLOSE')}">
+            <select v-model="$i18n.locale" @change="onLanguagechange">
+                <option v-for="(language,index) in languages" :value="language.key" :key="`Lang${index}`">{{ language.label }}</option>
             </select>
             </f7-list-item>
         </f7-list>
@@ -16,7 +15,19 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            languages: [
+                { key: 'en', label: 'English' },
+                { key: 'fa', label: 'فارسی' },
+            ]
+        }
+    },
+    methods: {
+        onLanguagechange(event) {
+            this.$store.dispatch('setLocale', event.target.value);
+        }
+    }
 }
 </script>
 

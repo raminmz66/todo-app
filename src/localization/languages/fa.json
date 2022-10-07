@@ -1,0 +1,35 @@
+{
+    "panel": {
+        "ABOUT": "درباره",
+        "SETTINGS": "تنظیمات",
+        "VERSION": "نسخه"
+    },
+    "tabs": {
+        "TODO": "لیست کارها",
+        "DONE": "انجام شده"
+    },
+    "todo": {
+        "TODO_PLACEHOLDER": "یادت نره ..."
+    },
+    "actions": {
+        "UNDONE": "تبدیل به انجام نشده",
+        "EDIT": "ویرایش",
+        "REMOVE": "حذف",
+        "CANCEL": "انصراف"
+    },
+    "navbar": {
+        "SEARCH": "جستجو",
+        "SEARCH_CANCEL": "انصراف",
+        "BACK": "بازگشت",
+        "CLOSE": "بستن"
+    },
+    "about": {
+        "PAGE_TITLE": "درباره",
+        "DEVELOPED_BY": "توسعه دهنده",
+        "DEVELOPER": "رامین معاذالهی"
+    },
+    "settings": {
+        "PAGE_TITLE": "تنظیمات",
+        "LANGUAGE": "زبان"
+    }
+}

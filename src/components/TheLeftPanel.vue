@@ -9,7 +9,7 @@
             <f7-list-item
               link="/about"
               view=".view-main"
-              title="About"
+              :title="$t('panel.ABOUT')"
               panel-close
             >
               <template #media>
@@ -19,7 +19,7 @@
             <f7-list-item
               link="/settings"
               view=".view-main"
-              title="Settings"
+              :title="$t('panel.SETTINGS')"
               panel-close
             >
               <template #media>
@@ -28,7 +28,7 @@
             </f7-list-item>
           </f7-list>
           <div class="version">
-            Version: {{ this.appVersion }}
+            {{ $t('panel.VERSION') }}: {{ this.appVersion }}
           </div>
         </f7-page>
       </f7-view>

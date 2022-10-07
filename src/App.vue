@@ -32,6 +32,10 @@ export default {
         ]
       }
     }
+  },
+  async mounted() {
+    await this.$store.dispatch('fetchLocale');
+    this.$i18n.locale = this.$store.getters.locale;
   }
 }
 </script>

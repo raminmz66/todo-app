@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-  <PageDefault navbar-title="DONE">
+  <PageDefault :navbar-title="$t('tabs.DONE')">
     <TodoList :todos="doneTasks" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove"></TodoList>
   </PageDefault>
 </template>

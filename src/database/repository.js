@@ -12,6 +12,13 @@ const repository = {
     },
     async removeTask(id) {
         await db.todos.delete(id);
+    },
+    async setLocale(locale) {
+        await db.settings.put({ id: 1, language: locale });
+    },
+    async loadSettings() {
+        const settings = await db.settings.toArray();
+        return settings[0];
     }
 }
 

@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-  <PageDefault navbar-title="TO DO">
+  <PageDefault :navbar-title="$t('tabs.TODO')">
     <AddTodo @add="addNote"></AddTodo>
     <TodoList :todos="todoTasks" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove"></TodoList>
   </PageDefault>

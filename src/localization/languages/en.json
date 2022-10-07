@@ -1,0 +1,35 @@
+{
+    "panel": {
+        "ABOUT": "About",
+        "SETTINGS": "Settings",
+        "VERSION": "Version"
+    },
+    "tabs": {
+        "TODO": "TO DO",
+        "DONE": "DONE"
+    },
+    "todo": {
+        "TODO_PLACEHOLDER": "Remember to ..."
+    },
+    "actions": {
+        "UNDONE": "Undone",
+        "EDIT": "Edit",
+        "REMOVE": "Remove",
+        "CANCEL": "Cancel"
+    },
+    "navbar": {
+        "SEARCH": "Search",
+        "SEARCH_CANCEL": "Cancel",
+        "BACK": "Back",
+        "CLOSE": "Close"
+    },
+    "about": {
+        "PAGE_TITLE": "About",
+        "DEVELOPED_BY": "Developed by",
+        "DEVELOPER": "Ramin Maazallahi"
+    },
+    "settings": {
+        "PAGE_TITLE": "Settings",
+        "LANGUAGE": "Language"
+    }
+}
