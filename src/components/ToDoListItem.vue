@@ -20,12 +20,12 @@
     </f7-list-item>
     <f7-actions :id="`todo-actions-${todo.id}`">
         <f7-actions-group>
-            <f7-actions-button v-if="todo.done && undonableItems" @click="onUndone">Undone</f7-actions-button>
-            <f7-actions-button v-if="editableItems" @click="onEdit">Edit</f7-actions-button>
-            <f7-actions-button color="red" @click="onRemove()">Remove</f7-actions-button>
+            <f7-actions-button v-if="todo.done && undonableItems" @click="onUndone">{{ $t('actions.UNDONE') }}</f7-actions-button>
+            <f7-actions-button v-if="editableItems" @click="onEdit">{{ $t('actions.EDIT') }}</f7-actions-button>
+            <f7-actions-button color="red" @click="onRemove()">{{ $t('actions.REMOVE') }}</f7-actions-button>
         </f7-actions-group>
         <f7-actions-group>
-            <f7-actions-button close color="gray">Cancel</f7-actions-button>
+            <f7-actions-button close color="gray">{{ $t('actions.CANCEL') }}</f7-actions-button>
         </f7-actions-group>
     </f7-actions>
 </template>

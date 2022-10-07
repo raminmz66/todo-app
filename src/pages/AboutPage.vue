@@ -1,7 +1,7 @@
 <template>
     <f7-page>
         <template #fixed>
-            <f7-navbar title="About" back-link="Back"></f7-navbar>
+            <f7-navbar :title="$t('about.PAGE_TITLE')" :back-link="$t('navbar.BACK')"></f7-navbar>
         </template>
         <div class="container">
             <div class="logo">
@@ -27,10 +27,10 @@
                 </a>
             </p>
             <div class="heading">
-                Developed by:
+                {{ $t('about.DEVELOPED_BY') }}
             </div>
             <div>
-                Ramin Maazallahi
+                {{ $t('about.DEVELOPER') }}
             </div>
             <p>
                 <a class="external" target="_blank" href="mailto:ramin.mz66@gmail.com">

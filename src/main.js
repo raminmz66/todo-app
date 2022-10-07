@@ -30,6 +30,10 @@ app.config.globalProperties.appVersion = packageInfo.version;
 app.config.globalProperties.appTitle = packageInfo.title;
 
 import store from './store/store';
-
 app.use(store);
+
+import i18n from './localization/i18n';
+app.use(i18n);
+
 app.mount('#app');
+

@@ -4,7 +4,8 @@ import repository from '../database/repository';
 export default createStore({
     state() {
         return {
-            tasks: []
+            tasks: [],
+            locale: 'en'
         }
     },
     mutations: {
@@ -25,6 +26,9 @@ export default createStore({
             if (index >= 0) {
                 state.tasks.splice(index,1);
             }
+        },
+        setLocale(state, locale) {
+            state.locale = locale;
         }
     },
     getters: {
@@ -49,7 +53,8 @@ export default createStore({
                 }
                 return 0;
             });
-        }
+        },
+        locale: state => state.locale
     },
     actions: {
         async fetchTasks({ commit }) {
@@ -67,6 +72,14 @@ export default createStore({
         async removeTask({ commit }, id) {
             await repository.removeTask(id);
             commit('removeTask', id);
+        },
+        async setLocale({ commit }, locale) {
+            await repository.setLocale(locale);
+            commit('setLocale', locale);
+        },
+        async fetchLocale({ commit }) {
+            const settings = await repository.loadSettings();
+            commit('setLocale', settings.language);
         }
     }
 });

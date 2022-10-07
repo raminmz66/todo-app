@@ -3,7 +3,7 @@
         <f7-list class="no-margin" inset form>
             <f7-list-input
                 type="textarea"
-                placeholder="Remember to ..."
+                :placeholder="$t('todo.TODO_PLACEHOLDER')"
                 clear-button
                 resizable
                 v-model:value="text"
