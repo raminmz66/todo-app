@@ -44,7 +44,7 @@ export default {
 <template>
   <PageDefault :navbar-title="$t('tabs.TODO')">
     <AddTodo @add="addNote"></AddTodo>
-    <TodoList :todos="todoTasks" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove"></TodoList>
+    <TodoList :todos="todoTasks" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove" sortable></TodoList>
   </PageDefault>
 </template>
 

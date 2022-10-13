@@ -1,5 +1,5 @@
 <template>
-  <f7-list sortable sortable-enabled @sortable:sort="onSort" :class="`search-list-${pageKey}`">
+  <f7-list :sortable="sortable" :sortable-enabled="sortable" @sortable:sort="onSort" :class="`search-list-${pageKey}`">
     <ToDoListItem v-for="todo in todos" :key="todo.id" :todo="todo" @update="onTodoUpdate" @remove="onTodoRemove"></ToDoListItem>
   </f7-list>
 </template>
@@ -9,7 +9,11 @@ import ToDoListItem from './ToDoListItem.vue';
 export default {
   inject: ['pageKey'],
   props: {
-      todos: Array
+      todos: Array,
+      sortable: {
+        type: Boolean,
+        default: false
+      }
   },
   components: { ToDoListItem },
   methods: {
