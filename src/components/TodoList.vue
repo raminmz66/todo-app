@@ -1,5 +1,5 @@
 <template>
-  <f7-list :class="`search-list-${pageKey}`">
+  <f7-list sortable sortable-enabled @sortable:sort="onSort" :class="`search-list-${pageKey}`">
     <ToDoListItem v-for="todo in todos" :key="todo.id" :todo="todo" @update="onTodoUpdate" @remove="onTodoRemove"></ToDoListItem>
   </f7-list>
 </template>
@@ -18,6 +18,9 @@ export default {
     },
     onTodoRemove(e) {
       this.$emit("todoRemove", e);
+    },
+    onSort(e) {
+      this.$store.dispatch('swap', { first: e.from, second: e.to })
     }
   }
 }

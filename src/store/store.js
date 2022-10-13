@@ -13,7 +13,7 @@ export default createStore({
             state.tasks = tasks;
         },
         addTask(state, task) {
-            state.tasks.push(task);
+            state.tasks.unshift(task);
         },
         updateTask(state, task) {
             const index = state.tasks.findIndex(t => t.id == task.id);
@@ -39,7 +39,7 @@ export default createStore({
             todayEnd.setHours(23,59,59,999);
             return state.tasks
                 .filter(task => task.done == 0 || (task.updatedTime >= todayStart && task.updatedTime <= todayEnd))
-                .sort((taskA, taskB) => taskB.id - taskA.id);
+                .sort((taskA, taskB) => taskB.sequence - taskA.sequence);
         },
         doneTasks: state => {
           return state.tasks
@@ -80,6 +80,14 @@ export default createStore({
         async fetchLocale({ commit }) {
             const settings = await repository.loadSettings();
             commit('setLocale', settings.language);
+        },
+        async swap({ commit, getters }, payload) {
+            const first = getters.todoTasks[payload.first];
+            const second = getters.todoTasks[payload.second];
+            const firstSeq = first.sequence;
+            first.sequence = second.sequence;
+            second.sequence = firstSeq;
+            await repository.swap(first.id, second.id);
         }
     }
 });
