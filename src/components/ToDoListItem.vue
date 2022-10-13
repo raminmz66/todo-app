@@ -17,17 +17,17 @@
         <template #after>
             <f7-link :actions-open="`#todo-actions-${todo.id}`" icon-ios="f7:ellipsis_vertical" icon-aurora="f7:ellipsis_vertical" icon-md="f7:ellipsis_vertical"></f7-link>
         </template>
+        <f7-actions :id="`todo-actions-${todo.id}`">
+            <f7-actions-group>
+                <f7-actions-button v-if="todo.done && undonableItems" @click="onUndone">{{ $t('actions.UNDONE') }}</f7-actions-button>
+                <f7-actions-button v-if="editableItems" @click="onEdit">{{ $t('actions.EDIT') }}</f7-actions-button>
+                <f7-actions-button color="red" @click="onRemove()">{{ $t('actions.REMOVE') }}</f7-actions-button>
+            </f7-actions-group>
+            <f7-actions-group>
+                <f7-actions-button close color="gray">{{ $t('actions.CANCEL') }}</f7-actions-button>
+            </f7-actions-group>
+        </f7-actions>
     </f7-list-item>
-    <f7-actions :id="`todo-actions-${todo.id}`">
-        <f7-actions-group>
-            <f7-actions-button v-if="todo.done && undonableItems" @click="onUndone">{{ $t('actions.UNDONE') }}</f7-actions-button>
-            <f7-actions-button v-if="editableItems" @click="onEdit">{{ $t('actions.EDIT') }}</f7-actions-button>
-            <f7-actions-button color="red" @click="onRemove()">{{ $t('actions.REMOVE') }}</f7-actions-button>
-        </f7-actions-group>
-        <f7-actions-group>
-            <f7-actions-button close color="gray">{{ $t('actions.CANCEL') }}</f7-actions-button>
-        </f7-actions-group>
-    </f7-actions>
 </template>
 
 <script>

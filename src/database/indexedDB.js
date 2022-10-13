@@ -26,3 +26,14 @@ db.version(4).stores({
 db.on("populate", trans => {
   trans.settings.add({ id: 1, language: 'en' });
 });
+
+db.version(5).stores({
+  todos: '++id, text, done, createdTime, updatedTime, sequence',
+  todosSeq: 'id, sequence'
+}).upgrade(async trans => {
+  let sequence = 1;
+  await trans.todos.toCollection().modify(todo => {
+    todo.sequence = sequence++; 
+  });
+  await trans.todosSeq.put({ id: 1, sequence: await trans.todos.toCollection().count() });
+});
