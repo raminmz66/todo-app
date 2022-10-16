@@ -24,7 +24,7 @@ export default {
       this.$emit("todoRemove", e);
     },
     onSort(e) {
-      this.$store.dispatch('swap', { first: e.from, second: e.to })
+      this.$store.dispatch('move', { from: e.from, to: e.to })
     }
   }
 }

@@ -38,8 +38,7 @@ export default createStore({
             todayStart.setHours(0,0,0,0);
             todayEnd.setHours(23,59,59,999);
             return state.tasks
-                .filter(task => task.done == 0 || (task.updatedTime >= todayStart && task.updatedTime <= todayEnd))
-                .sort((taskA, taskB) => taskB.sequence - taskA.sequence);
+                .filter(task => task.done == 0 || (task.updatedTime >= todayStart && task.updatedTime <= todayEnd));
         },
         doneTasks: state => {
           return state.tasks
@@ -81,13 +80,21 @@ export default createStore({
             const settings = await repository.loadSettings();
             commit('setLocale', settings.language);
         },
-        async swap({ commit, getters }, payload) {
-            const first = getters.todoTasks[payload.first];
-            const second = getters.todoTasks[payload.second];
-            const firstSeq = first.sequence;
-            first.sequence = second.sequence;
-            second.sequence = firstSeq;
-            await repository.swap(first.id, second.id);
+        async move({ getters, dispatch }, payload) {
+            let {from, to} = payload;
+            await repository.updateTask({id: getters.todoTasks[from].id, sequence: getters.todoTasks[to].sequence});
+            if (to < from) {
+                while (to < from) {
+                    await repository.updateTask({id: getters.todoTasks[to].id, sequence: getters.todoTasks[to+1].sequence});
+                    to++;
+                }
+            } else {
+                while (to > from) {
+                    await repository.updateTask({id: getters.todoTasks[to].id, sequence: getters.todoTasks[to-1].sequence});
+                    to--;
+                }
+            }
+            await dispatch('fetchTasks');
         }
     }
 });

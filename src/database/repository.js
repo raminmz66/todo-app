@@ -2,7 +2,7 @@ import { db } from './indexedDB';
 
 const repository = {
     async tasks() {
-        return await db.todos.toArray();
+        return await db.todos.orderBy('sequence').reverse().toArray();
     },
     async addTask(task) {
         const next = await this.increaseTodosSeq();
