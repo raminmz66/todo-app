@@ -13,7 +13,7 @@
         :class="`searchbar-${pageKey}`"
         expandable
         :search-container="`.search-list-${pageKey}`"
-        search-in=".item-title"
+        search-in=".item-title .todo-title"
         :disable-button="!theme.aurora"
         :placeholder="$t('navbar.SEARCH')"
         :disable-button-text="$t('navbar.SEARCH_CANCEL')"

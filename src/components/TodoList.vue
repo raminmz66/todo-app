@@ -4,6 +4,7 @@
     :virtual-list-params="{
       items: todos,
       renderExternal,
+      searchAll,
       height: 71.59,
     }">
     <ToDoListItem v-for="todo in items" :key="todo.id" :todo="todo" @update="onTodoUpdate" @remove="onTodoRemove" :style="`top: ${vlData.topPosition}px`"></ToDoListItem>
@@ -50,6 +51,14 @@ export default {
     },
     renderExternal(vl, vlData) {
       this.vlData = vlData;
+    },
+    searchAll(query, items) {
+      const found = [];
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].text.toLowerCase().indexOf(query.toLowerCase()) >= 0 || query.trim() === '')
+          found.push(i);
+      }
+      return found; // return array with mathced indexes
     },
   }
 }

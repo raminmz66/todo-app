@@ -6,13 +6,16 @@
             <f7-button outline @click="onEditCancel">Cancel</f7-button>
         </f7-segmented>
     </f7-list-item>
-    <f7-list-item v-else :style="style" :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" :title="todo.text" :checkbox="selectableItems">
+    <f7-list-item v-else :style="style" :class="todo.done ? 'done' : ''" :checked="todo.done" :key="todo.id" @change="onChange" :checkbox="selectableItems">
         <template #header>
             <Timeago :datetime="timeAgoDateTime">
                 <template #default="{ timeago }">
                     {{ (this.todo.done ? 'Updated ' : 'Created ') + timeago }}
                 </template>
             </Timeago>
+        </template>
+        <template #title>
+            <span class="todo-title">{{ todo.text }}</span>
         </template>
         <template #after>
             <f7-link :actions-open="`#todo-actions-${todo.id}`" icon-ios="f7:ellipsis_vertical" icon-aurora="f7:ellipsis_vertical" icon-md="f7:ellipsis_vertical"></f7-link>
