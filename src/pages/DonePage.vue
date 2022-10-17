@@ -31,7 +31,7 @@ export default {
 
 <template>
   <PageDefault :navbar-title="$t('tabs.DONE')">
-    <TodoList :todos="doneTasks" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove"></TodoList>
+    <TodoList :todos="doneTasks" @todoUpdate="onTodoUpdate" @todoRemove="onTodoRemove" is-virtual></TodoList>
   </PageDefault>
 </template>
 
